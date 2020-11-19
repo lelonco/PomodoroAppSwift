@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B391D53D256726AA0099A9E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3BEE7112566A54A00A56079 /* String+IR.swift */,
+				B3BEE7082565EDB400A56079 /* UIView+IR.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B3BEE6D92565ECF500A56079 = {
 			isa = PBXGroup;
 			children = (
@@ -66,17 +75,16 @@
 		B3BEE6E42565ECF500A56079 /* PomodoroApp */ = {
 			isa = PBXGroup;
 			children = (
+				B391D53D256726AA0099A9E1 /* Extensions */,
 				B3BEE6E52565ECF500A56079 /* AppDelegate.swift */,
 				B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */,
 				B3BEE6E92565ECF500A56079 /* ViewController.swift */,
 				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
 				B3BEE70A2565EDB400A56079 /* TimerCell.swift */,
-				B3BEE7082565EDB400A56079 /* UIView+IR.swift */,
 				B3BEE7092565EDB400A56079 /* ViewController.swift */,
 				B3BEE6EE2565ECF700A56079 /* Assets.xcassets */,
 				B3BEE6F02565ECF700A56079 /* LaunchScreen.storyboard */,
 				B3BEE6F32565ECF700A56079 /* Info.plist */,
-				B3BEE7112566A54A00A56079 /* String+IR.swift */,
 			);
 			path = PomodoroApp;
 			sourceTree = "<group>";
