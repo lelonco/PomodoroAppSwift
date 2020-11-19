@@ -86,7 +86,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let index = indexPath.item
         let width = (index % 5 == 0) ? (index.description.getCGSize(fontHeight: 15).width) : 2
-        return CGSize(width: width, height: 80)
+        return CGSize(width: 2, height: 80)
 
     }
 }

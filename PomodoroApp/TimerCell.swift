@@ -71,9 +71,13 @@ class TimerCell: UICollectionViewCell {
         layoutConstraints.append(lineView.autoPinEdge(toSuperviewEdge: .bottom))
         layoutConstraints.append(contentsOf: lineView.autoSetDimensions(to: lineSize))
         
-        layoutConstraints.append(contentsOf: timeLabel.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(), excludingEdge: .top))
+//        layoutConstraints.append(contentsOf: timeLabel.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(), excludingEdge: .top))
         layoutConstraints.append(timeLabel.autoPinEdge(.top, to: .bottom, of: lineView))
         layoutConstraints.append(timeLabel.autoSetDimension(.height, toSize: 33))
+        layoutConstraints.append(timeLabel.autoSetDimension(.width, toSize: (timeLabel.text?.getCGSize(fontHeight: 24).width ?? 24)))
+        layoutConstraints.append(timeLabel.autoPinEdge(toSuperviewEdge: .bottom))
+        layoutConstraints.append(timeLabel.autoHCenterInSuperview())
+
         isSetuped = true 
 //        timeLabel.autoAlignAxis(.horizontal, toSameAxisOf: lineView)
     }
