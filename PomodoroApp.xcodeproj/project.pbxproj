@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B391D53A25670F2E0099A9E1 /* FadingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391D53925670F2E0099A9E1 /* FadingLayout.swift */; };
 		B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E52565ECF500A56079 /* AppDelegate.swift */; };
 		B3BEE6E82565ECF500A56079 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */; };
 		B3BEE6EA2565ECF500A56079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E92565ECF500A56079 /* ViewController.swift */; };
@@ -16,10 +17,11 @@
 		B3BEE70B2565EDB400A56079 /* UIView+IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7082565EDB400A56079 /* UIView+IR.swift */; };
 		B3BEE70C2565EDB400A56079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7092565EDB400A56079 /* ViewController.swift */; };
 		B3BEE70D2565EDB400A56079 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE70A2565EDB400A56079 /* TimerCell.swift */; };
-		B3BEE7122566A54A00A56079 /* String+VS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7112566A54A00A56079 /* String+VS.swift */; };
+		B3BEE7122566A54A00A56079 /* String+IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7112566A54A00A56079 /* String+IR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B391D53925670F2E0099A9E1 /* FadingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLayout.swift; sourceTree = "<group>"; };
 		B3BEE6E22565ECF500A56079 /* PomodoroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BEE6E52565ECF500A56079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +32,7 @@
 		B3BEE7082565EDB400A56079 /* UIView+IR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IR.swift"; sourceTree = "<group>"; };
 		B3BEE7092565EDB400A56079 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3BEE70A2565EDB400A56079 /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
-		B3BEE7112566A54A00A56079 /* String+VS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+VS.swift"; sourceTree = "<group>"; };
+		B3BEE7112566A54A00A56079 /* String+IR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+IR.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +69,14 @@
 				B3BEE6E52565ECF500A56079 /* AppDelegate.swift */,
 				B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */,
 				B3BEE6E92565ECF500A56079 /* ViewController.swift */,
+				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
 				B3BEE70A2565EDB400A56079 /* TimerCell.swift */,
 				B3BEE7082565EDB400A56079 /* UIView+IR.swift */,
 				B3BEE7092565EDB400A56079 /* ViewController.swift */,
 				B3BEE6EE2565ECF700A56079 /* Assets.xcassets */,
 				B3BEE6F02565ECF700A56079 /* LaunchScreen.storyboard */,
 				B3BEE6F32565ECF700A56079 /* Info.plist */,
-				B3BEE7112566A54A00A56079 /* String+VS.swift */,
+				B3BEE7112566A54A00A56079 /* String+IR.swift */,
 			);
 			path = PomodoroApp;
 			sourceTree = "<group>";
@@ -154,7 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3BEE70C2565EDB400A56079 /* ViewController.swift in Sources */,
-				B3BEE7122566A54A00A56079 /* String+VS.swift in Sources */,
+				B391D53A25670F2E0099A9E1 /* FadingLayout.swift in Sources */,
+				B3BEE7122566A54A00A56079 /* String+IR.swift in Sources */,
 				B3BEE6EA2565ECF500A56079 /* ViewController.swift in Sources */,
 				B3BEE70B2565EDB400A56079 /* UIView+IR.swift in Sources */,
 				B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */,

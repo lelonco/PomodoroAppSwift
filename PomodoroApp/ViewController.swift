@@ -12,11 +12,11 @@ class ViewController: UIViewController {
 
     var isLayouted = false
     let collectionView: UICollectionView = {
-        let flowLayot = UICollectionViewFlowLayout()
+        let flowLayot = FadingLayout(scrollDirection: .horizontal)
 
 //        flowLayot.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
 //        flowLayot.itemSize = CGSize(width: 2, height: 50)
-        flowLayot.scrollDirection = .horizontal
+//        flowLayot.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: flowLayot)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .clear
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         super.updateViewConstraints()
         guard !isLayouted else { return }
 
-        collectionView.autoVCenterInSuperview()
+        collectionView.autoPinEdge(toSuperviewEdge: .top)
         collectionView.autoPinEdge(toSuperviewEdge: .leading)
         collectionView.autoPinEdge(toSuperviewEdge: .trailing)
         collectionView.autoSetDimension(.height, toSize: 90)
@@ -94,7 +94,20 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDelegate {
     
     
-    
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let index = self.collectionView.indexPathForItem(at: self.collectionView.convert(self.collectionView.center , from: self.view)) else {
+//            print(self.collectionView.center)
+            return
+        }
+        guard let cell = self.collectionView.cellForItem(at: index) as? TimerCell else {
+            return
+        }
+        cell.layer.opacity = 0.5
+        print(index)
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
