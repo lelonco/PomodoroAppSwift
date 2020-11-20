@@ -10,11 +10,18 @@ import PureLayout
 
 class ViewController: UIViewController {
     
-    var lastScrolledIndex: IndexPath = IndexPath(item: 0, section: 0)
+    let sideEdgeInset: CGFloat = 34
+    
+    let gradientColors = [UIColor(rgbHex:0x7056B3).cgColor, UIColor(rgbHex:0x91C4E1).cgColor]
+    var lastScrolledIndex: IndexPath = IndexPath(item: 0, section: 0) {
+        didSet {
+            timerLabel.text = "\(lastScrolledIndex.item):00"
+        }
+    }
     var isLayouted = false
     var reuseIdentifier = "timerCollectionViewCell"
     
-    let collectionView: UICollectionView = {
+    let timerCollectionView: UICollectionView = {
         let flowLayot = FadingLayout(scrollDirection: .horizontal)
 
         let collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: flowLayot)
@@ -27,12 +34,32 @@ class ViewController: UIViewController {
         return collection
     }()
     
+    let timerLabel: UILabel = {
+       let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = .catamaran(ofSize: 100, fontName: .thin)
+        label.text = "25:00"
+        
+        return label
+    }()
+    
+    let categoryTitleLabel: UILabel = {
+       let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = .catamaran(ofSize: 18)
+        label.text = "Freestyle"
+        label.alpha = 0.7
+        return label
+    }()
+    
+    let backgroundGradient = BackgroundGradient()
     init() {
         super.init(nibName: nil, bundle: nil)
-        collectionView.dataSource = self
-        collectionView.delegate = self //TODO: Did i need it?
-        collectionView.register(TimerCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.view.backgroundColor = .blue
+        timerCollectionView.dataSource = self
+        timerCollectionView.delegate = self //TODO: Did i need it?
+        timerCollectionView.register(TimerCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     required init?(coder: NSCoder) {
@@ -41,14 +68,13 @@ class ViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
-        self.view.addSubview(collectionView)
+        [backgroundGradient,categoryTitleLabel,timerLabel,timerCollectionView].forEach({ self.view.addSubview($0) })
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.setNeedsUpdateConstraints()
-        let inset = self.view.center.x - 1  // 1 – is half of the cell width
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        let inset = self.view.center.x - (1 + sideEdgeInset)    // 1 – is half of the cell width
+        timerCollectionView.contentInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
 
         // Do any additional setup after loading the view.
     }
@@ -56,11 +82,18 @@ class ViewController: UIViewController {
     override func updateViewConstraints() {
         super.updateViewConstraints()
         guard !isLayouted else { return }
+        backgroundGradient.autoPinEdgesToSuperviewEdges()
+        categoryTitleLabel.autoPinEdge(toSuperviewEdge: .top,withInset: 47)
+        categoryTitleLabel.autoHCenterInSuperview()
+        
+        timerLabel.autoPinEdge(.top, to: .bottom, of: categoryTitleLabel, withOffset: 5)
+        timerLabel.autoHCenterInSuperview()
 
-        collectionView.autoPinEdge(toSuperviewEdge: .top)
-        collectionView.autoPinEdge(toSuperviewEdge: .leading)
-        collectionView.autoPinEdge(toSuperviewEdge: .trailing)
-        collectionView.autoSetDimension(.height, toSize: 90)
+        
+        timerCollectionView.autoPinEdge(.top, to: .bottom, of: timerLabel, withOffset: 25)
+        timerCollectionView.autoPinEdge(toSuperviewEdge: .leading, withInset: sideEdgeInset)
+        timerCollectionView.autoPinEdge(toSuperviewEdge: .trailing, withInset: sideEdgeInset)
+        timerCollectionView.autoSetDimension(.height, toSize: 84)
 
         isLayouted = true
     }
@@ -74,17 +107,21 @@ extension ViewController: UICollectionViewDelegate {
 
 extension ViewController: UIScrollViewDelegate {
 //TODO: Fix force stop of scrolling
+//TODO: Need to try recreate mechanism of updating selected cell based on lastApearedCell and lastDisapearedCell
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 
-        if let index = self.collectionView.indexPathForItem(at:self.collectionView.convert(self.collectionView.center, from: self.view)) {
-            self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        if let index = self.timerCollectionView.indexPathForItem(at:self.timerCollectionView.convert(self.timerCollectionView.center, from: self.view)) {
+            self.timerCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            timerLabel.text = "\(index.item):00"
         } else {
-            self.collectionView.scrollToItem(at: lastScrolledIndex, at: .centeredHorizontally, animated: true)
+            self.timerCollectionView.scrollToItem(at: lastScrolledIndex, at: .centeredHorizontally, animated: true)
+            timerLabel.text = "\(lastScrolledIndex.item):00"
             return
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let index = self.collectionView.indexPathForItem(at: self.collectionView.convert(self.collectionView.center , from: self.view)) else {
+        guard let index = self.timerCollectionView.indexPathForItem(at: self.timerCollectionView.convert(self.timerCollectionView.center , from: self.view)) else {
             return
         }
         lastScrolledIndex = index
