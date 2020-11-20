@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32151CD2568541E003F9E2D /* UIColor+IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32151CC2568541E003F9E2D /* UIColor+IR.swift */; };
+		B34C7A7025684FD900F99535 /* UIFont + IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C7A6F25684FD900F99535 /* UIFont + IR.swift */; };
+		B34C7A752568503A00F99535 /* Catamaran-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34C7A732568503A00F99535 /* Catamaran-Thin.ttf */; };
+		B34C7A762568503A00F99535 /* Catamaran-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34C7A742568503A00F99535 /* Catamaran-Regular.ttf */; };
 		B391D53A25670F2E0099A9E1 /* FadingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391D53925670F2E0099A9E1 /* FadingLayout.swift */; };
+		B3AD8748256856AC002E749B /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD8747256856AC002E749B /* BackgroundGradient.swift */; };
 		B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E52565ECF500A56079 /* AppDelegate.swift */; };
 		B3BEE6E82565ECF500A56079 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */; };
-		B3BEE6EA2565ECF500A56079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E92565ECF500A56079 /* ViewController.swift */; };
 		B3BEE6EF2565ECF700A56079 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3BEE6EE2565ECF700A56079 /* Assets.xcassets */; };
 		B3BEE6F22565ECF700A56079 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3BEE6F02565ECF700A56079 /* LaunchScreen.storyboard */; };
 		B3BEE7032565ED3400A56079 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = B3BEE7022565ED3400A56079 /* PureLayout */; };
@@ -21,11 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B32151CC2568541E003F9E2D /* UIColor+IR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+IR.swift"; sourceTree = "<group>"; };
+		B34C7A6F25684FD900F99535 /* UIFont + IR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont + IR.swift"; sourceTree = "<group>"; };
+		B34C7A732568503A00F99535 /* Catamaran-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catamaran-Thin.ttf"; sourceTree = "<group>"; };
+		B34C7A742568503A00F99535 /* Catamaran-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catamaran-Regular.ttf"; sourceTree = "<group>"; };
 		B391D53925670F2E0099A9E1 /* FadingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLayout.swift; sourceTree = "<group>"; };
+		B3AD8747256856AC002E749B /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		B3BEE6E22565ECF500A56079 /* PomodoroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BEE6E52565ECF500A56079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B3BEE6E92565ECF500A56079 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3BEE6EE2565ECF700A56079 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3BEE6F12565ECF700A56079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3BEE6F32565ECF700A56079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,13 +55,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B34C7A722568501D00F99535 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B34C7A742568503A00F99535 /* Catamaran-Regular.ttf */,
+				B34C7A732568503A00F99535 /* Catamaran-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B391D53D256726AA0099A9E1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B34C7A6F25684FD900F99535 /* UIFont + IR.swift */,
 				B3BEE7112566A54A00A56079 /* String+IR.swift */,
+				B32151CC2568541E003F9E2D /* UIColor+IR.swift */,
 				B3BEE7082565EDB400A56079 /* UIView+IR.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B3AD874A2568578B002E749B /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				B3AD8747256856AC002E749B /* BackgroundGradient.swift */,
+				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
+			);
+			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		B3BEE6D92565ECF500A56079 = {
@@ -75,11 +103,11 @@
 		B3BEE6E42565ECF500A56079 /* PomodoroApp */ = {
 			isa = PBXGroup;
 			children = (
+				B3AD874A2568578B002E749B /* UIComponent */,
+				B34C7A722568501D00F99535 /* Fonts */,
 				B391D53D256726AA0099A9E1 /* Extensions */,
 				B3BEE6E52565ECF500A56079 /* AppDelegate.swift */,
 				B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */,
-				B3BEE6E92565ECF500A56079 /* ViewController.swift */,
-				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
 				B3BEE70A2565EDB400A56079 /* TimerCell.swift */,
 				B3BEE7092565EDB400A56079 /* ViewController.swift */,
 				B3BEE6EE2565ECF700A56079 /* Assets.xcassets */,
@@ -152,8 +180,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34C7A762568503A00F99535 /* Catamaran-Regular.ttf in Resources */,
 				B3BEE6F22565ECF700A56079 /* LaunchScreen.storyboard in Resources */,
 				B3BEE6EF2565ECF700A56079 /* Assets.xcassets in Resources */,
+				B34C7A752568503A00F99535 /* Catamaran-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,14 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32151CD2568541E003F9E2D /* UIColor+IR.swift in Sources */,
 				B3BEE70C2565EDB400A56079 /* ViewController.swift in Sources */,
 				B391D53A25670F2E0099A9E1 /* FadingLayout.swift in Sources */,
 				B3BEE7122566A54A00A56079 /* String+IR.swift in Sources */,
-				B3BEE6EA2565ECF500A56079 /* ViewController.swift in Sources */,
+				B34C7A7025684FD900F99535 /* UIFont + IR.swift in Sources */,
 				B3BEE70B2565EDB400A56079 /* UIView+IR.swift in Sources */,
 				B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */,
 				B3BEE6E82565ECF500A56079 /* SceneDelegate.swift in Sources */,
 				B3BEE70D2565EDB400A56079 /* TimerCell.swift in Sources */,
+				B3AD8748256856AC002E749B /* BackgroundGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

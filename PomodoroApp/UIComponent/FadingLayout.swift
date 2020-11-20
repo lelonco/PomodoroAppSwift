@@ -54,6 +54,10 @@ class FadingLayout: UICollectionViewFlowLayout,UICollectionViewDelegateFlowLayou
                     if distanceToEdge <= fadingDistance {
                         attrs.alpha = distanceToEdge * fadeFactor
                     }
+//                    if attrs.center.x == visibleRect.width / 2  {
+//                        attrs.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+//                    }
+
 
                 }
             }
