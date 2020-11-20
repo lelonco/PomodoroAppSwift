@@ -9,7 +9,6 @@ import UIKit
 
 class FadingLayout: UICollectionViewFlowLayout,UICollectionViewDelegateFlowLayout {
 
-    //should be 0<fade<1
     private let fadingDistance: CGFloat = 60
     private let fadeFactor: CGFloat = 0.017
     private let cellHeight : CGFloat = 80
@@ -59,7 +58,7 @@ class FadingLayout: UICollectionViewFlowLayout,UICollectionViewDelegateFlowLayou
                 }
             }
             return attributes
-        }else{
+        } else {
             return nil
         }
     }
