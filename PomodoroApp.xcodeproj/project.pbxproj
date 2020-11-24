@@ -22,7 +22,9 @@
 		B3BEE70C2565EDB400A56079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7092565EDB400A56079 /* ViewController.swift */; };
 		B3BEE70D2565EDB400A56079 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE70A2565EDB400A56079 /* TimerCell.swift */; };
 		B3BEE7122566A54A00A56079 /* String+IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7112566A54A00A56079 /* String+IR.swift */; };
+		B3CC07BE256C5824004DA709 /* ProgressStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC07BD256C5824004DA709 /* ProgressStack.swift */; };
 		B3CC07C1256C5F9C004DA709 /* Catamaran-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3CC07C0256C5F9C004DA709 /* Catamaran-Bold.ttf */; };
+		B3CC07C5256C68A3004DA709 /* StartPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC07C4256C68A3004DA709 /* StartPauseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,9 @@
 		B3BEE7092565EDB400A56079 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3BEE70A2565EDB400A56079 /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		B3BEE7112566A54A00A56079 /* String+IR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+IR.swift"; sourceTree = "<group>"; };
+		B3CC07BD256C5824004DA709 /* ProgressStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressStack.swift; path = PomodoroApp/ProgressStack.swift; sourceTree = SOURCE_ROOT; };
 		B3CC07C0256C5F9C004DA709 /* Catamaran-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catamaran-Bold.ttf"; sourceTree = "<group>"; };
+		B3CC07C4256C68A3004DA709 /* StartPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPauseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +85,10 @@
 		B3AD874A2568578B002E749B /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				B3CC07BD256C5824004DA709 /* ProgressStack.swift */,
 				B3AD8747256856AC002E749B /* BackgroundGradient.swift */,
 				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
+				B3CC07C4256C68A3004DA709 /* StartPauseButton.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -202,6 +208,8 @@
 				B3BEE70C2565EDB400A56079 /* ViewController.swift in Sources */,
 				B391D53A25670F2E0099A9E1 /* FadingLayout.swift in Sources */,
 				B3BEE7122566A54A00A56079 /* String+IR.swift in Sources */,
+				B3CC07BE256C5824004DA709 /* ProgressStack.swift in Sources */,
+				B3CC07C5256C68A3004DA709 /* StartPauseButton.swift in Sources */,
 				B34C7A7025684FD900F99535 /* UIFont + IR.swift in Sources */,
 				B3BEE70B2565EDB400A56079 /* UIView+IR.swift in Sources */,
 				B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */,
