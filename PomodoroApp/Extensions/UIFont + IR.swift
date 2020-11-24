@@ -10,7 +10,7 @@ import UIKit
 enum CatamaranFontsName: String {
     case regular = "Catamaran-Regular"
 //    case medium = "Catamaran-Regular.ttf"
-//    case bold = "Catamaran-Regular.ttf"
+    case bold = "Catamaran-Bold"
     case thin = "Catamaran-Thin"
 }
 

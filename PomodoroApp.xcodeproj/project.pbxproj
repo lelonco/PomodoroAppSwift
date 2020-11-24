@@ -22,6 +22,7 @@
 		B3BEE70C2565EDB400A56079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7092565EDB400A56079 /* ViewController.swift */; };
 		B3BEE70D2565EDB400A56079 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE70A2565EDB400A56079 /* TimerCell.swift */; };
 		B3BEE7122566A54A00A56079 /* String+IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE7112566A54A00A56079 /* String+IR.swift */; };
+		B3CC07C1256C5F9C004DA709 /* Catamaran-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3CC07C0256C5F9C004DA709 /* Catamaran-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B3BEE7092565EDB400A56079 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3BEE70A2565EDB400A56079 /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		B3BEE7112566A54A00A56079 /* String+IR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+IR.swift"; sourceTree = "<group>"; };
+		B3CC07C0256C5F9C004DA709 /* Catamaran-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catamaran-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		B34C7A722568501D00F99535 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B3CC07C0256C5F9C004DA709 /* Catamaran-Bold.ttf */,
 				B34C7A742568503A00F99535 /* Catamaran-Regular.ttf */,
 				B34C7A732568503A00F99535 /* Catamaran-Thin.ttf */,
 			);
@@ -182,6 +185,7 @@
 			files = (
 				B34C7A762568503A00F99535 /* Catamaran-Regular.ttf in Resources */,
 				B3BEE6F22565ECF700A56079 /* LaunchScreen.storyboard in Resources */,
+				B3CC07C1256C5F9C004DA709 /* Catamaran-Bold.ttf in Resources */,
 				B3BEE6EF2565ECF700A56079 /* Assets.xcassets in Resources */,
 				B34C7A752568503A00F99535 /* Catamaran-Thin.ttf in Resources */,
 			);
