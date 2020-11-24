@@ -8,7 +8,7 @@
 import UIKit
 
 class ProgressStack: UIView {
-    var buttonAction: (() -> ())? = nil
+    var buttonAction: ((UIButton) -> ())? = nil
     
     let roundLabel: UILabel = {
         
@@ -70,7 +70,7 @@ class ProgressStack: UIView {
     @objc
     func buttonTapped() {
         startPauseButton.didTimerStarted.toggle()
-        buttonAction?()
+        buttonAction?(startPauseButton)
     }
     
     required init?(coder: NSCoder) {

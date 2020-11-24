@@ -11,11 +11,22 @@ import PureLayout
 class ViewController: UIViewController {
     
     let sideEdgeInset: CGFloat = 34
-    
+    var seconds = 0 {
+        didSet {
+            let str = String(format: "%02d:%02d", minutes,seconds)
+            timerLabel.text = str
+        }
+    }
+    var minutes = 0 {
+        didSet {
+            let str = String(format: "%02d:%02d", minutes,seconds)
+            timerLabel.text = str
+        }
+    }
     let gradientColors = [UIColor(rgbHex:0x7056B3).cgColor, UIColor(rgbHex:0x91C4E1).cgColor]
     var lastScrolledIndex: IndexPath = IndexPath(item: 0, section: 0) {
         didSet {
-            timerLabel.text = "\(lastScrolledIndex.item):00"
+            minutes = (lastScrolledIndex.item)
         }
     }
     var isLayouted = false
@@ -55,11 +66,17 @@ class ViewController: UIViewController {
     }()
     
     let backgroundGradient = BackgroundGradient()
+    
+    let progressStack = ProgressStack(frame: .zero)
+    
+    
+    var timer: Timer? = nil
     init() {
         super.init(nibName: nil, bundle: nil)
         timerCollectionView.dataSource = self
         timerCollectionView.delegate = self //TODO: Did i need it?
         timerCollectionView.register(TimerCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        progressStack.buttonAction = buttonTapped
     }
     
     required init?(coder: NSCoder) {
@@ -68,7 +85,7 @@ class ViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        [backgroundGradient,categoryTitleLabel,timerLabel,timerCollectionView].forEach({ self.view.addSubview($0) })
+        [backgroundGradient,categoryTitleLabel,timerLabel,timerCollectionView,progressStack].forEach({ self.view.addSubview($0) })
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +96,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+
+//    let button = StartPauseButton(frame: .zero)
     override func updateViewConstraints() {
         super.updateViewConstraints()
         guard !isLayouted else { return }
@@ -95,13 +114,43 @@ class ViewController: UIViewController {
         timerCollectionView.autoPinEdge(toSuperviewEdge: .trailing, withInset: sideEdgeInset)
         timerCollectionView.autoSetDimension(.height, toSize: 84)
 
+        
+        progressStack.autoPinEdge(toSuperviewEdge: .leading, withInset: 64)
+        progressStack.autoPinEdge(toSuperviewEdge: .trailing, withInset: 64)
+        progressStack.autoPinEdge(.top, to: .bottom, of: timerCollectionView,withOffset: 50)
+
         isLayouted = true
     }
     
+    func buttonTapped(_ sender: UIButton) {
+        guard let startPauseButton = sender as? StartPauseButton else { return }
+        guard let timer = timer else {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+                if self.minutes == 0 && self.seconds == 0 {
+                    timer.invalidate()
+                    startPauseButton.didTimerStarted = false
+                    self.timer = nil
+                    return
+                }
+                if self.seconds == 0 {
+                    self.minutes -= 1
+                    self.seconds = 60
+                    return
+                }
+                self.seconds -= 10
+            }
+            return
+        }
+        timer.invalidate()
+        self.timer = nil
+    }
 }
 
 extension ViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.timerCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
     
 }
 

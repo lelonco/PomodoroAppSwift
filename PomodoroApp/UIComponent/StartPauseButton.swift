@@ -11,14 +11,13 @@ class StartPauseButton: UIButton {
     var didTimerStarted = false {
         didSet {
             let imageName = didTimerStarted ? "pauseIcon" : "playIcon"
+        
             iconImageView.image = UIImage(named: imageName)
         }
     }
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "playIcon"))
-//        imageView.tintColor = .white
-//        imageView.autoSetDimension(.height, toSize: 19)
         imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled = false
         return imageView
