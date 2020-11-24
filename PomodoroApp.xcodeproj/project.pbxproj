@@ -85,10 +85,10 @@
 		B3AD874A2568578B002E749B /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				B3CC07BD256C5824004DA709 /* ProgressStack.swift */,
 				B3AD8747256856AC002E749B /* BackgroundGradient.swift */,
 				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
 				B3CC07C4256C68A3004DA709 /* StartPauseButton.swift */,
+				B3CC07BD256C5824004DA709 /* ProgressStack.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
