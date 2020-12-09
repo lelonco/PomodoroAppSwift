@@ -65,6 +65,26 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let skipButton: UIButton = {
+        let view = UIButton(type: .custom)
+        let gradientView = GradientView(startColor: .init(rgbHex: 0xFF4B4B), endColor: .init(rgbHex: 0xF73467),gradientDirectrion: .rightDiagonal)
+        let imageView = UIImageView(image: UIImage(named: "skipIcon"))
+        
+        [gradientView,imageView].forEach { (subView) in
+            view.addSubview(subView)
+            subView.isUserInteractionEnabled = false
+        }
+        view.autoSetDimensions(to: CGSize(width: 34, height: 34))
+        gradientView.autoPinEdgesToSuperviewEdges()
+        imageView.autoCenterInSuperview()
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 17
+        gradientView.layer.cornerRadius = 17
+        
+        view.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
+        return view
+    }()
+    
     let backgroundGradient = BackgroundGradient()
     
     let progressStack = ProgressStack(frame: .zero)
@@ -85,7 +105,7 @@ class ViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        [backgroundGradient,categoryTitleLabel,timerLabel,timerCollectionView,progressStack].forEach({ self.view.addSubview($0) })
+        [backgroundGradient,categoryTitleLabel,timerLabel,timerCollectionView,progressStack, skipButton].forEach({ self.view.addSubview($0) })
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,18 +127,19 @@ class ViewController: UIViewController {
         
         timerLabel.autoPinEdge(.top, to: .bottom, of: categoryTitleLabel, withOffset: 5)
         timerLabel.autoHCenterInSuperview()
-
         
         timerCollectionView.autoPinEdge(.top, to: .bottom, of: timerLabel, withOffset: 25)
         timerCollectionView.autoPinEdge(toSuperviewEdge: .leading, withInset: sideEdgeInset)
         timerCollectionView.autoPinEdge(toSuperviewEdge: .trailing, withInset: sideEdgeInset)
         timerCollectionView.autoSetDimension(.height, toSize: 84)
 
-        
         progressStack.autoPinEdge(toSuperviewEdge: .leading, withInset: 64)
         progressStack.autoPinEdge(toSuperviewEdge: .trailing, withInset: 64)
         progressStack.autoPinEdge(.top, to: .bottom, of: timerCollectionView,withOffset: 50)
-
+        
+        skipButton.autoPinEdge(toSuperviewEdge: .trailing, withInset: 40)
+        skipButton.autoAlignAxis(.horizontal, toSameAxisOf: timerLabel)
+        
         isLayouted = true
     }
     
@@ -143,6 +164,24 @@ class ViewController: UIViewController {
         }
         timer.invalidate()
         self.timer = nil
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        applyShadows()
+    }
+    
+    func applyShadows() {
+        skipButton.layer.shadowPath = UIBezierPath(roundedRect: skipButton.bounds, cornerRadius: 17).cgPath
+        skipButton.layer.shadowColor = UIColor(rgbHex: 0xFFB202).cgColor
+        skipButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        skipButton.layer.shadowOpacity = 0.3
+        skipButton.layer.masksToBounds = false
+    }
+    
+    @objc
+    func skipTapped() {
+            print("Skip tapped")
     }
 }
 
