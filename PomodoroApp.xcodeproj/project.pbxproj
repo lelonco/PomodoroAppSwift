@@ -12,7 +12,7 @@
 		B34C7A752568503A00F99535 /* Catamaran-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34C7A732568503A00F99535 /* Catamaran-Thin.ttf */; };
 		B34C7A762568503A00F99535 /* Catamaran-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34C7A742568503A00F99535 /* Catamaran-Regular.ttf */; };
 		B391D53A25670F2E0099A9E1 /* FadingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B391D53925670F2E0099A9E1 /* FadingLayout.swift */; };
-		B3AD8748256856AC002E749B /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD8747256856AC002E749B /* BackgroundGradient.swift */; };
+		B3AD8748256856AC002E749B /* GradientViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD8747256856AC002E749B /* GradientViews.swift */; };
 		B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E52565ECF500A56079 /* AppDelegate.swift */; };
 		B3BEE6E82565ECF500A56079 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */; };
 		B3BEE6EF2565ECF700A56079 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3BEE6EE2565ECF700A56079 /* Assets.xcassets */; };
@@ -33,7 +33,7 @@
 		B34C7A732568503A00F99535 /* Catamaran-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catamaran-Thin.ttf"; sourceTree = "<group>"; };
 		B34C7A742568503A00F99535 /* Catamaran-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catamaran-Regular.ttf"; sourceTree = "<group>"; };
 		B391D53925670F2E0099A9E1 /* FadingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLayout.swift; sourceTree = "<group>"; };
-		B3AD8747256856AC002E749B /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		B3AD8747256856AC002E749B /* GradientViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViews.swift; sourceTree = "<group>"; };
 		B3BEE6E22565ECF500A56079 /* PomodoroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BEE6E52565ECF500A56079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3BEE6E72565ECF500A56079 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		B3AD874A2568578B002E749B /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				B3AD8747256856AC002E749B /* BackgroundGradient.swift */,
+				B3AD8747256856AC002E749B /* GradientViews.swift */,
 				B391D53925670F2E0099A9E1 /* FadingLayout.swift */,
 				B3CC07C4256C68A3004DA709 /* StartPauseButton.swift */,
 				B3CC07BD256C5824004DA709 /* ProgressStack.swift */,
@@ -215,7 +215,7 @@
 				B3BEE6E62565ECF500A56079 /* AppDelegate.swift in Sources */,
 				B3BEE6E82565ECF500A56079 /* SceneDelegate.swift in Sources */,
 				B3BEE70D2565EDB400A56079 /* TimerCell.swift in Sources */,
-				B3AD8748256856AC002E749B /* BackgroundGradient.swift in Sources */,
+				B3AD8748256856AC002E749B /* GradientViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
